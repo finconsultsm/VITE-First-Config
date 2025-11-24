@@ -1,0 +1,68 @@
+/* геометрія, щоб все коректно рахувалося */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  justify-content: center; /* центруємо все, що всередині main */
+}
+
+main .container {
+  width: 100%;
+  max-width: 1200px; /* щоб контейнер не розтягувався більше макета */
+}
+
+/* фон сторінки */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+}
+
+/* білий блок з галереєю */
+.gallery {
+  max-width: 1128px; /* 3 колонки + gap як у макеті */
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* 3 картки в ряд на достатній ширині */
+.gallery-item {
+  flex: 0 0 calc((100% - 2 * 24px) / 3); /* 3 елементи з урахуванням двох проміжків */
+}
+
+/* посилання-контейнер */
+.gallery-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* картинка з правильною пропорцією */
+.gallery-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 18 / 10; /* приблизно 360×200 */
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: zoom-in;
+
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+/* hover */
+.gallery-link:hover .gallery-image,
+.gallery-link:focus .gallery-image {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}

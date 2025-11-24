@@ -16,3 +16,41 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+
+/* Home Work */
+@import url('./gallery.css');
+@import url('./form.css');
+
+.nav {
+  padding: 20px 0;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 32px;
+  color: #2e2f42;
+  font-weight: 700;
+  transition: color 200ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #4e75ff;
+}
+
+.nav-link.current {
+  color: #4e75ff;
+  font-weight: 600;
+}
